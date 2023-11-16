@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash" rel="stylesheet">
+    <style>
+        /* Hier dein vorhandenes CSS */
+        body {
+            background: blue;
+            overflow: hidden;
+            background-image: url(http://icons.iconarchive.com/icons/musett/dragon-ballz/256/Dragon-Ball-icon.png);
+            background-repeat: no-repeat;
+            background-position: 50% 10%;
+        }
+        /* ... (Rest deines CSS-Codes) */
+        /* Das CSS für das Suchformular */
+        .grad {
+            background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+        }
+        .container1 {
+            /* Dein CSS für container1 hier... */
+        }
+        /* ... (Rest deines CSS-Codes) */
+        /* Das CSS für das Suchformular */
+        form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="grad">
+        <div class="container1">
+            <div class="left">
+                <div class="scroll">
+                    <img class="logo" src="http://img05.deviantart.net/cef3/i/2015/122/c/4/dragon_ball_z__dbz__nuevo_logo_by_saodvd-d8rx6aw.png">
+                    <p>"Willkommen auf unserer Dragon Ball Z-Plattform! Tauche ein in die Welt von Goku und seinen Freunden. Hier kannst du durch eine Vielzahl von Charakteren stöbern, ihre Profile erkunden und die faszinierenden Details der Dragon Ball Saga erleben. Lass dich von der Magie dieses Universums verzaubern und entdecke die Helden, ihre Abenteuer und ihre unvergleichlichen Kämpfe. Eine Seite für wahre Dragon Ball Z-Fans!"</p>
+                </div>
+            </div>
+        </div>
+        <form action="/character_list" method="GET">
+            <input type="text" name="character_name" placeholder="Suche nach Charakter...">
+            <input type="submit" value="Suchen">
+        </form>
+    </div>
+</body>
+</html>

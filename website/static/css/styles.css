@@ -1,0 +1,89 @@
+body {
+    background: blue;
+    overflow: hidden;
+    background-image: url(http://icons.iconarchive.com/icons/musett/dragon-ballz/256/Dragon-Ball-icon.png);
+    background-repeat: no-repeat;
+    background-position: 50% 10%;
+  }
+  
+  .grad {
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+  }
+  
+  .container1 {
+    display: block;
+    position: relative;
+    left: 60px;
+    width: 50%;
+    text-align: center;
+    font-family: 'Ravi Prakash', cursive;
+    -webkit-text-stroke: 2px black;
+    font-size: 60px;
+    font-weight: 500;
+    perspective: 600px;
+    perspective-origin: 50% 0;
+  }
+  
+  p {
+    color: yellow;
+    background: linear-gradient(to bottom, yellow 0%, red 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  }
+  
+  .left {
+    transform-origin: 20% 0%;
+    transform-style: preserve-3d;
+    transform: rotateY(30deg);
+  }
+  
+  .scroll {
+    animation: scrolling 40s linear 0s infinite;
+  }
+  
+  @keyframes scrolling {
+    from {
+      transform: translateY(25%)
+    }
+    to {
+      transform: translateY(-100%)
+    }
+  }
+  
+  .logo {
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .container2 {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .goku {
+    width: 100%;
+    height: 100%;
+    background-image: url("http://vignette2.wikia.nocookie.net/fictional-battle-omniverse/images/8/8b/Goku_Dragon_Ball_Z.png/revision/latest?cb=20150508010447");
+    background-size: 300px auto;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+  }
+  
+  .goku:hover {
+    background-image: url(http://vignette3.wikia.nocookie.net/vsbattles/images/5/56/Goku_%28Base%29.png/revision/latest?cb=20160315175220);
+    background-size: 400px auto;
+  }
+  
+  body:hover {
+    background-image: url(http://pre15.deviantart.net/1b53/th/pre/i/2012/302/1/4/z_ball_dbz_by_fsuarez913-d5jc8v1.png);
+    background-size: 300px 300px;
+  }
+  
+  
