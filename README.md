@@ -14,5 +14,4 @@ Die Anwendung verwendet diese <a href="https://github.com/chadvidovcich/dragonBa
 Installation und Ausführung
 Klone das Repository: git clone https://github.com/GentGn/DragonBall_Projekt.git
 Navigiere in das Projektverzeichnis: cd Dragonball_Projekt
-Installiere die erforderlichen Abhängigkeiten: pip install -r requirements.txt
 Starte die Anwendung: python main.py

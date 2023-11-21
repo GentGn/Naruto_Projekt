@@ -1,0 +1,19 @@
+<!-- character_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character List</title>
+</head>
+<body>
+    <h1>List of Characters</h1>
+    <ul>
+        {% for character in characters_all_names %}
+            <li>
+                <p>{{ character.name }}</p>
+            </li>
+            <!-- Hier wird das Bild und der Name jedes Charakters angezeigt -->
+        {% endfor %}
+    </ul>
+</body>
+</html>

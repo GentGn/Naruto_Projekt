@@ -1,36 +1,55 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, render_template
 import requests
 
-# Erstellung eines Blueprint-Objekts mit dem Namen 'dragonball'
-dragonball_bp = Blueprint('dragonball', __name__)
+# Flask Blueprint erstellen
+naruto_bp = Blueprint('naruto', __name__)
 
-# Route für alle Charaktere
-@dragonball_bp.route('/api/character/')
-def get_characters():
-    # URL zur API
-    api_url = 'https://dbapidb.herokuapp.com/api/character/'
+# Route für die Startseite
+@naruto_bp.route('/')
+def index():
+    return render_template('index.html')
+
+# Route für die Character_List.html
+@naruto_bp.route('/character_list.html')
+def character_list():
+    return render_template('character_list.html')
+
+# Route, um alle Charakternamen abzurufen und in der Template anzuzeigen
+@naruto_bp.route('/character')
+def show_all_characters():
+    api_url = 'https://narutodb.xyz/api/'
     response = requests.get(api_url)
     
-    # Überprüfung der Antwort
+    # Statuscode der API-Antwort anzeigen
+    print("Status Code:", response.status_code)
+    
     if response.status_code == 200:
-        characters_data = response.json()
-        return jsonify(characters_data)  # Rückgabe der Daten im JSON-Format
+        characters_data = response.json()['characters']  # Charakterdaten aus der API als JSON extrahieren
+        # Charakternamen an die Vorlage übergeben und rendern
+        return render_template('character_list.html', characters_all_names=characters_data)
     else:
         return 'Fehler beim Abrufen der Daten.'
 
-# Route für einen bestimmten Charakter anhand des Namens
-@dragonball_bp.route('/api/character/<name>')
+
+
+# Route, um einen einzelnen Charakter abzurufen
+@naruto_bp.route('/api/character/<name>')
 def get_single_character(name):
-    name = name.replace(" ", "_")  # Formatierung des Namens für die API-Anfrage
-    api_url = f'https://dbapidb.herokuapp.com/api/character/{name}'
-    
+    api_url = f'https://narutodb.xyz/api/character/{name}'
     response = requests.get(api_url)
     
-    # Überprüfung der Antwort und Rückgabe der Daten oder Fehlermeldung
+    print("Status Code:", response.status_code)  
+    
     if response.status_code == 200:
         character_data = response.json()
-        return jsonify(character_data)
-    else:
-        return "Charakter wurde nicht gefunden."
-
+        print("Character Data:", character_data)  # Print der spezifischen Charakterdaten
         
+        if name in character_data:
+            single_character = character_data[name]
+            return jsonify(single_character)
+        else:
+            print("Charakter wurde nicht gefunden.")
+            return "Charakter wurde nicht gefunden."
+    else:
+        print("Fehler beim Abrufen der Daten.")
+        return "Fehler beim Abrufen der Daten."
