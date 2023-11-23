@@ -1,5 +1,6 @@
-from flask import Blueprint, jsonify, request, render_template
+from flask import Blueprint, jsonify, request, render_template, redirect, url_for
 import requests
+
 
 # Flask Blueprint erstellen
 naruto_bp = Blueprint('naruto', __name__)
@@ -23,7 +24,7 @@ def character_list():
 
 @naruto_bp.route('/character')
 def show_all_characters():
-    api_url = 'https://narutodb.xyz/api/character?page=1&limit=200'
+    api_url = 'https://narutodb.xyz/api/character?page=1&limit=1500'
     response = requests.get(api_url)
     print(response, flush=True)
     # Statuscode der API-Antwort anzeigen
@@ -38,6 +39,25 @@ def show_all_characters():
         return render_template('character_list.html', characters_all_names=characters_data)
     else:
         return 'Fehler beim Abrufen der Daten.'
+
+
+@naruto_bp.route('/search')
+def search_characters():
+    search_query = request.args.get('search_query')
+
+    if search_query:
+        # Wenn ein Suchbegriff vorhanden ist, suche nach dem Charakter
+        api_url = f'https://narutodb.xyz/api/character/search?name={search_query}'
+        response = requests.get(api_url)
+
+        if response.status_code == 200:
+            character_data = response.json()
+            return render_template('character_list.html', character_data=character_data)
+        else:
+            return 'Fehler beim Abrufen der Daten.'
+    else:
+        # Wenn kein Suchbegriff vorhanden ist, leite es zur Liste aller Charaktere weiter
+        return redirect(url_for('naruto.show_all_characters'))
 
 
 # Route, um einen einzelnen Charakter abzurufen
