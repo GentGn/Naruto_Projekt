@@ -5,31 +5,38 @@ import requests
 naruto_bp = Blueprint('naruto', __name__)
 
 # Route für die Startseite
+
+
 @naruto_bp.route('/')
 def index():
     return render_template('index.html')
 
 # Route für die Character_List.html
+
+
 @naruto_bp.route('/character_list.html')
 def character_list():
     return render_template('character_list.html')
 
 # Route, um alle Charakternamen abzurufen und in der Template anzuzeigen
+
+
 @naruto_bp.route('/character')
 def show_all_characters():
-    api_url = 'https://narutodb.xyz/api/'
+    api_url = 'https://www.narutodb.xyz/api/character/search?name=Abiru'
     response = requests.get(api_url)
-    
+    print(response, flush=True)
     # Statuscode der API-Antwort anzeigen
-    print("Status Code:", response.status_code)
-    
+    print("Status Code:", response.status_code, flush=True)
+
     if response.status_code == 200:
-        characters_data = response.json()['characters']  # Charakterdaten aus der API als JSON extrahieren
+        # Charakterdaten aus der API als JSON extrahieren
+        characters_data = response.json()['name']
+        print(characters_data, flush=True)
         # Charakternamen an die Vorlage übergeben und rendern
         return render_template('character_list.html', characters_all_names=characters_data)
     else:
         return 'Fehler beim Abrufen der Daten.'
-
 
 
 # Route, um einen einzelnen Charakter abzurufen
@@ -37,13 +44,14 @@ def show_all_characters():
 def get_single_character(name):
     api_url = f'https://narutodb.xyz/api/character/{name}'
     response = requests.get(api_url)
-    
-    print("Status Code:", response.status_code)  
-    
+
+    print("Status Code:", response.status_code)
+
     if response.status_code == 200:
         character_data = response.json()
-        print("Character Data:", character_data)  # Print der spezifischen Charakterdaten
-        
+        # Print der spezifischen Charakterdaten
+        print("Character Data:", character_data)
+
         if name in character_data:
             single_character = character_data[name]
             return jsonify(single_character)
