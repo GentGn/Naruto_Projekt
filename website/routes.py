@@ -23,7 +23,7 @@ def character_list():
 
 @naruto_bp.route('/character')
 def show_all_characters():
-    api_url = 'https://www.narutodb.xyz/api/character/search?name=Abiru'
+    api_url = 'https://narutodb.xyz/api/character?page=1&limit=200'
     response = requests.get(api_url)
     print(response, flush=True)
     # Statuscode der API-Antwort anzeigen
@@ -31,8 +31,9 @@ def show_all_characters():
 
     if response.status_code == 200:
         # Charakterdaten aus der API als JSON extrahieren
-        characters_data = response.json()['name']
-        print(characters_data, flush=True)
+        characters_data = response.json()['characters']
+
+        # print(characters_data, flush=True)
         # Charakternamen an die Vorlage übergeben und rendern
         return render_template('character_list.html', characters_all_names=characters_data)
     else:
