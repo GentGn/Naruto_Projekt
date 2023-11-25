@@ -33,7 +33,6 @@ def show_all_characters():
     if response.status_code == 200:
         # Charakterdaten aus der API als JSON extrahieren
         characters_data = response.json()['characters']
-
         # print(characters_data, flush=True)
         # Charakternamen an die Vorlage übergeben und rendern
         return render_template('character_list.html', characters_all_names=characters_data)
@@ -46,20 +45,21 @@ def search_characters():
     search_query = request.args.get('search_query')
 
     if search_query:
-        # Wenn ein Suchbegriff vorhanden ist, suche nach dem Charakter
         api_url = f'https://narutodb.xyz/api/character/search?name={search_query}'
         response = requests.get(api_url)
 
         if response.status_code == 200:
             character_data = response.json()
-            return render_template('character_list.html', character_data=character_data)
+            print(character_data)  # Ausgabe der gesamten API-Antwort
+            # Rest des Codes
+            return render_template('search_results.html',  character_info=character_data )
         else:
-            return 'Fehler beim Abrufen der Daten.'
+            print('Fehler beim Abrufen der Daten:', response.status_code)
+            return 'Fehler beim Abrufen der Daten. Bitte navigieren Sie zurück zur Startseite und überprüfen Ihre Eingabe.'
     else:
-        # Wenn kein Suchbegriff vorhanden ist, leite es zur Liste aller Charaktere weiter
         return redirect(url_for('naruto.show_all_characters'))
 
-
+'''
 # Route, um einen einzelnen Charakter abzurufen
 @naruto_bp.route('/api/character/<name>')
 def get_single_character(name):
@@ -82,3 +82,4 @@ def get_single_character(name):
     else:
         print("Fehler beim Abrufen der Daten.")
         return "Fehler beim Abrufen der Daten."
+'''
