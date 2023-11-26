@@ -7,6 +7,23 @@
 <body>
     <h1>Search Results</h1>
     <p>Showing results for: {{ character_info['name'] }}</p>
+    <img src="{{ character_info['images'][0] }}" alt="{{ character_info['name'] }} Image">
+    <p>Debut (Manga): {{ character_info['debut']['manga'] }}</p>
+    <p>Debut (Anime): {{ character_info['debut']['anime'] }}</p>
+    <p>Debut (Novel): {{ character_info['debut']['novel'] }}</p>
+    <!-- Zeige weitere Informationen an, z.B.: -->
+    <p>Age (Part I): {{ character_info['personal']['age']['Part I'] }}</p>
+    <p>Age (Part II): {{ character_info['personal']['age']['Part II'] }}</p>
+    <p>Height (Part I): {{ character_info['personal']['height']['Part I'] }}</p>
+    <p>Weight (Part I): {{ character_info['personal']['weight']['Part I'] }}</p>
+    <p>Blood Type: {{ character_info['personal']['bloodType'] }}</p>
+    <p>Occupation: {{ character_info['personal']['occupation'] }}</p>
 
+    <h2>Jutsus:</h2>
+    <ul>
+    {% for jutsu in character_info['jutsu'] %}
+        <li>{{ jutsu }}</li>
+    {% endfor %}
+    </ul>
 </body>
 </html>
