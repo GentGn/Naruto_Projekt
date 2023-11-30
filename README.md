@@ -1,17 +1,41 @@
-Dragon Ball Z Platform
-Dieses Projekt ist eine Webanwendung, die auf Flask basiert und die Welt von Dragon Ball Z präsentiert. Die Anwendung nutzt eine externe API, um Charakterinformationen abzurufen und auf der Plattform darzustellen.
+NarutoDB Web App
+Die NarutoDB Web App ist eine Plattform, die es Nutzern ermöglicht, Informationen aus der Welt von Naruto und Boruto abzurufen. Mithilfe der NarutoDB API greift die Webanwendung auf umfangreiche Daten zu Charakteren, Clans, Kekkei Genkai, Teams, Tailed Beasts und Dörfern zu.
 
-Überblick
-Die Dragon Ball Z Platform bietet eine Benutzeroberfläche, die es Fans ermöglicht, verschiedene Charakterprofile zu erkunden. Die Startseite enthält einen Textausschnitt, der die Dragon Ball Z-Saga beschreibt und die Nutzer einlädt, in das Universum von Goku und seinen Freunden einzutauchen.
+Anleitung zur Verwendung
+Installation
 
-Verwendung der Ressourcen
-Der Inhalt von `index.html` und `styles.css` wurde an das Design und die Inspiration dieser [CodePen-Seite](https://codepen.io/Troublemite/pen/ymvoYP) angelehnt, um eine ansprechende und thematisch passende Benutzeroberfläche zu gestalten.
+Klonen Sie das Repository: git clone https://github.com/GentGn/Naruto_Projekt.git
+Navigieren Sie in das Projektverzeichnis: cd Naruto_Projekt
+
+Starten der Anwendung
+
+Führen Sie die Anwendung aus: python app.py
+Öffnen Sie Ihren bevorzugten Webbrowser und navigieren Sie zu http://localhost:5000.
+Navigation
+
+Verwenden Sie die Navigationselemente, um die verschiedenen Abschnitte zu erkunden.
+Nutzen Sie die Suchfunktion, um nach spezifischen Charakteren oder Informationen zu suchen.
+Technologien
+Python (Flask)
+HTML/CSS
+NarutoDB API
+Funktionen
+Charakterinformationen: Abrufen von Details zu verschiedenen Charakteren aus der Naruto/Boruto-Serie.
+Clans: Anzeige von Informationen über Clans und deren Mitglieder.
+Kekkei Genkai: Entdecken Sie einzigartige Fähigkeiten und Blutlinien aus der Serie.
+Teamübersicht: Informationen zu den verschiedenen Teams und deren Mitgliedern.
+Tailed Beasts: Erfahren Sie mehr über die mächtigen Tailed Beasts und ihre Bedeutung in der Serie.
+Dorfdetails: Erkunden Sie die verschiedenen Dörfer und ihre Einwohner.
+Mitwirkende
+Dein Name / Dein Benutzername
+Weitere Mitwirkende
+Lizenz
+Dieses Projekt unterliegt der MIT-Lizenz. Weitere Informationen finden sich in der LICENSE-Datei im Repository.
+
+Diese README-Datei bietet einen Überblick über die NarutoDB Web App und enthält Anweisungen zur Installation und Verwendung der Anwendung. Ergänze die Informationen mit Details zu den Funktionen, Dateistruktur oder spezifischen Anforderungen des Projekts.
 
 
-API-Verbindung
-Die Anwendung verwendet diese <a href="https://github.com/chadvidovcich/dragonBall-API">Dragon Ball Z API</a>, um Charakterdaten abzurufen und darzustellen.
 
-Installation und Ausführung
-Klone das Repository: git clone https://github.com/GentGn/DragonBall_Projekt.git
-Navigiere in das Projektverzeichnis: cd Dragonball_Projekt
-Starte die Anwendung: python main.py
+
+
+
