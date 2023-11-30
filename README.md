@@ -1,5 +1,5 @@
 NarutoDB Web App
-Die NarutoDB Web App ist eine Plattform, die es Nutzern ermöglicht, Informationen aus der Welt von Naruto und Boruto abzurufen. Mithilfe der NarutoDB API greift die Webanwendung auf umfangreiche Daten zu Charakteren, Clans, Kekkei Genkai, Teams, Tailed Beasts und Dörfern zu.
+Die NarutoDB Web App ist eine Plattform, die es Nutzern ermöglicht, Informationen aus der Welt von Naruto und Boruto abzurufen. Mithilfe der NarutoDB API  greift die Webanwendung auf umfangreiche Daten zu Charakteren, Clans, Kekkei Genkai, Teams, Tailed Beasts und Dörfern zu.
 
 Anleitung zur Verwendung
 Installation
@@ -18,8 +18,10 @@ Nutzen Sie die Suchfunktion, um nach spezifischen Charakteren oder Informationen
 Technologien
 Python (Flask)
 HTML/CSS
-NarutoDB API
+NarutoDB API(https://narutodb.xyz/)
+
 Funktionen
+
 Charakterinformationen: Abrufen von Details zu verschiedenen Charakteren aus der Naruto/Boruto-Serie.
 Clans: Anzeige von Informationen über Clans und deren Mitglieder.
 Kekkei Genkai: Entdecken Sie einzigartige Fähigkeiten und Blutlinien aus der Serie.
@@ -27,10 +29,11 @@ Teamübersicht: Informationen zu den verschiedenen Teams und deren Mitgliedern.
 Tailed Beasts: Erfahren Sie mehr über die mächtigen Tailed Beasts und ihre Bedeutung in der Serie.
 Dorfdetails: Erkunden Sie die verschiedenen Dörfer und ihre Einwohner.
 Mitwirkende
-Dein Name / Dein Benutzername
-Weitere Mitwirkende
-Lizenz
-Dieses Projekt unterliegt der MIT-Lizenz. Weitere Informationen finden sich in der LICENSE-Datei im Repository.
+Gent / GentGn
+Weitere Mitwirkende:
+Jakob Abi
+
+
 
 Diese README-Datei bietet einen Überblick über die NarutoDB Web App und enthält Anweisungen zur Installation und Verwendung der Anwendung. Ergänze die Informationen mit Details zu den Funktionen, Dateistruktur oder spezifischen Anforderungen des Projekts.
 
