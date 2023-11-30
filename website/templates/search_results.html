@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/styles.css">
     <title>Search Results</title>
 </head>
 <body>
     <h1>Search Results</h1>
-    <p>Showing results for: {{ character_info['name'] }}</p>
+    <p>Showing results for:<b> {{ character_info['name'] }}</b></p>
     <img src="{{ character_info['images'][0] }}" alt="{{ character_info['name'] }} Image">
     <p>Debut (Manga): {{ character_info['debut']['manga'] }}</p>
     <p>Debut (Anime): {{ character_info['debut']['anime'] }}</p>
     <p>Debut (Novel): {{ character_info['debut']['novel'] }}</p>
     <!-- Zeige weitere Informationen an, z.B.: -->
-    <p>Age (Part I): {{ character_info['personal']['age']['Part I'] }}</p>
-    <p>Age (Part II): {{ character_info['personal']['age']['Part II'] }}</p>
-    <p>Height (Part I): {{ character_info['personal']['height']['Part I'] }}</p>
-    <p>Weight (Part I): {{ character_info['personal']['weight']['Part I'] }}</p>
-    <p>Blood Type: {{ character_info['personal']['bloodType'] }}</p>
-    <p>Occupation: {{ character_info['personal']['occupation'] }}</p>
+    <p>Age (Part I): {{ character_info.get('personal', {}).get('age', {}).get('Part I') }}</p>
+    <p>Age (Part II): {{ character_info.get('personal', {}).get('age', {}).get('Part II') }}</p>
+    <p>Height (Part I): {{ character_info.get('personal', {}).get('height', {}).get('Part I') }}</p>
+    <p>Weight (Part I): {{ character_info.get('personal', {}).get('weight', {}).get('Part I') }}</p>
+    <p>Blood Type: {{ character_info.get('personal', {}).get('bloodType') }}</p>
+    <p>Occupation: {{ character_info.get('personal', {}).get('occupation') }}</p>
 
     <h2>Jutsus:</h2>
     <ul>

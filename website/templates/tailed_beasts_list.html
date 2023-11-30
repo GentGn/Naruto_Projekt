@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <title>Tailed Beasts List</title>
+    <style>
+        .beast-name {
+            font-weight: bold;
+            font-size: 20px;
+            color: #ff5733; /* Change the color as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Bijuu List</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Jutsu</th>
+            <th>Jinchuriki</th>
+            <th>Image</th>
+        </tr>
+        {% for tailed_beast in tailed_beasts_info['tailedBeasts'] %}
+        <tr>
+            <td><span class="beast-name">{{ tailed_beast['name'] }}</span></td>
+            <td>
+                {% if tailed_beast['jutsu'][0]|length <= 100 %}
+                <ul>
+                    {% for jutsu in tailed_beast['jutsu'] %}
+                    <li>{{ jutsu }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </td>
+            <td>
+                <ul>
+                    {% for jinchuriki in tailed_beast['personal']['jinchūriki'] %}
+                    <li>{{ jinchuriki }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td>
+                {% if tailed_beast['images'] %}
+                <img src="{{ tailed_beast['images'][0] }}" alt="{{ tailed_beast['name'] }}">
+                {% else %}
+                No Image Available
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

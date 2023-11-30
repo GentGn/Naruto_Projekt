@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <title>Villages List</title>
+</head>
+<body>
+    <h1>Villages List</h1>
+    <h2 style="font-size: 24px;">Total Villages: {{ villages_info['totalVillages'] }}</h2>
+
+    <table>
+        <tr>
+            <th>Village Name</th>
+            <th>Characters</th>
+        </tr>
+        {% for village in villages_info['villages'] %}
+        <tr>
+            <td>
+                <h3 style="font-weight: bold; font-size: 20px;">{{ village['name'] }}</h3>
+                <hr style="border: none; border-top: 2px solid #ccc;"> <!-- Deutlichere Trennlinie nach jedem Dorfnamen -->
+            </td>
+            <td>
+                {% for character in village['characters'] %}
+                    <div style="background-color: lightcoral; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                        <h4>{{ character['name'] }}</h4>
+                        {% if character['images'] %}
+                            <img src="{{ character['images'][0] }}" alt="{{ character['name'] }} Image" width="50">
+                        {% else %}
+                            <span style="color: red;">No Image Available</span>
+                        {% endif %}
+                    </div>
+                    {% if not loop.last %}
+                    <hr style="border: none; border-top: 1px solid transparent;"> <!-- Trennlinie zwischen Charakteren -->
+                    {% endif %}
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <title>Naruto Website: Startseite</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+
 </head>
 <body>
-    <header>
+    <header id="page-header">
+        <!--<div class="website_header">
+            <img src="\website\static\images\rasengan_chronicles.png" alt="Ueberschrift" class="project-image">
+        </div>-->
+        
         <h1>Willkommen zur Naruto-Plattform!</h1>
         <p>Tauche ein in die Welt von Naruto und seinen Freunden...</p>
     </header>
 
-    <main>
+    <main id="main-content">
         <form action="/search" method="GET" class="input-group mb-3">
-            <input type="search" class="form-control form-control-sm" name="search_query" placeholder="Suche nach Charakteren" aria-label="Suche" aria-describedby="button-addon2">
+            <input type="search" class="form-control form-control-sm" name="search_query" placeholder="Suche nach Charakteren" aria-label="Suche" width="30%" aria-describedby="button-addon2">
             <div class="input-group-append">
                 <button class="btn btn-primary btn-sm" type="submit" role="button">
                     <i class="fas fa-search"></i> Suche
@@ -22,9 +27,26 @@
             </div>
         </form>
     </main>
-
-    <footer>
-        <p>&copy; 2023 Naruto Projekt</p>
+    <div class="form-group ml-3">
+     <h5 id="search-info">Tipp: Bei Suche ohne Text erhalten Sie eine Auflistung aller Naruto/Boruto-Charaktere!</h5>
+        <form action="/clans" method="GET" class="input-group btn-lg mr-3">
+            <button type="submit" class="btn btn-custom btn-lg">Clans</button>
+        </form>
+        <form action="/kekkeigenkai" method="GET" class="input-group btn-lg mr-3">
+            <button type="submit" class="btn btn-custom btn-lg">Kekkei Genkai</button>
+        </form>
+        <form action="/teams" method="GET" class="input-group btn-lg mr-3">
+            <button type="submit" class="btn btn-custom btn-lg">Teams</button>
+        </form>
+        <form action="/tailed_beasts" method="GET" class="input-group btn-lg mr-3">
+            <button type="submit" class="btn btn-custom btn-lg">Tailed Beasts</button>
+        </form>
+        <form action="/villages" method="GET" class="input-group btn-lg mr-3">
+            <button type="submit" class="btn btn-custom btn-lg">Villages</button>
+        </form>
+    </div>
+    <footer id="page-footer">
+        <p mb>&copy; 2023 Naruto Projekt</p>
     </footer>
 </body>
 </html>

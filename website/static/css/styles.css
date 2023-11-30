@@ -1,0 +1,91 @@
+/* styles.css */
+
+/* Hintergrund */
+body {
+    background-color: orange;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Header-Styling */
+#page-header {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* Main-Styling */
+#main-content {
+    text-align: center;
+}
+
+/* Suchleiste */
+#main-content form input[type="search"] {
+    border: 2px solid #FF5F6D;
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+
+/* Suchleisten-Button */
+#main-content form button {
+    background-color: #FF5F6D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+
+/* Suchleisten-Button-Icon */
+#main-content form button i {
+    margin-right: 5px;
+}
+
+/* Suchinformationen */
+#search-info {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Stilisiere des Inhalts der einzelnen HTML-Dateien */
+h1 {
+    color: white;
+    background-color: #333;
+    padding: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Hier kommen die zusätzlichen CSS-Stile für die Button-Gruppe in Index.hmtl */
+.btn-custom {
+    background-color: red;
+    color: white;
+    margin-bottom: 10px;
+    width: fit-content;
+    margin-left: auto;
+}
+
+.btn-custom:nth-last-child(1) {
+    background-color: orange;
+}
+
+/* Footer-Styling */
+#page-footer {
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    width: 110%;
+    padding: 10px;
+    color: black;
+}

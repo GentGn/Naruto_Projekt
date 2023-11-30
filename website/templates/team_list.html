@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <title>Teams List</title>
+    <style>
+        .team-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teams List</h1>
+    <h2>Total Teams: {{ teams_info['totalTeams'] }}</h2>
+
+    <table>
+        <tr>
+            <th>Team Name</th>
+            <th>Characters</th>
+            <th>Image</th>
+        </tr>
+        {% for team in teams_info['teams'] %}
+        <tr>
+            <td><span class="team-name">{{ team['name'] }}</span></td>
+            <td>
+                <ul>
+                    {% for character in team['characters'] %}
+                        <li>{{ character['name'] }}</li>
+                        {% if character['images'] %}
+                            <img src="{{ character['images'][0] }}" alt="{{ character['name'] }} Image" width="50">
+                        {% else %}
+                            <span>No Image Available</span>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
