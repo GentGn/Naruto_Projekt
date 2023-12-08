@@ -1,5 +1,5 @@
 [build]
-  command = "python build_script.py"  # Der Befehl, der deine statischen Dateien erzeugt
+  command = "python main.py"  # Der Befehl, der deine statischen Dateien erzeugt
   publish = "Naruto_Projekt/website"  # Der Ordner, in dem die generierten statischen Dateien liegen
 
 [dev]
