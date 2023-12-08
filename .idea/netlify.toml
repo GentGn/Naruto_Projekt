@@ -1,0 +1,7 @@
+[build]
+  command = "python build_script.py"  # Der Befehl, der deine statischen Dateien erzeugt
+  publish = "Naruto_Projekt/website"  # Der Ordner, in dem die generierten statischen Dateien liegen
+
+[dev]
+  command = "flask run"  # Befehl zum Starten deiner Flask-Anwendung im Entwicklungsmodus
+  targetPort = 5000  # Port, auf dem deine Flask-Anwendung laufen soll
