@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask  # Import der Flask-Klasse
 from website.routes import naruto_bp  # Import des Blueprint für Dragonball
 
